@@ -1,19 +1,25 @@
 # devops-netology
 ### Мои изменения
 Это моё первое редактирование для задания.
-## Игнорируемые файлы в проекте
+## Игнорируемые файлы (terraform/.gitignore)
 
-### Корневой .gitignore
-(Пока пустой)
+- Все папки с именем `.terraform` и всё внутри них  
+  → `**/.terraform/*`
 
-### terraform/.gitignore
-Этот файл игнорирует типичные файлы Terraform, чтобы они не попадали в репозиторий:
+- Все файлы с расширением `.tfstate` и `.tfstate.*`  
+  → `*.tfstate` и `*.tfstate.*`
 
-- **.tfstate** и **.tfstate.* ** — файлы состояния
-- **.terraform/** — локальная папка с плагинами и модулями
-- **.tfvars** и **.tfvars.json** — файлы с переменными
-- **override.tf** и подобные — локальные переопределения
-- **crash.log** — логи ошибок
-- **.terraformrc** и **terraform.rc** — конфиги CLI
+- Файл `crash.log` и все файлы вида `crash.*.log`  
+  → `crash.log` и `crash.*.log`
 
-Благодаря этому в Git не попадут секреты, локальные файлы и временные данные — репозиторий остаётся чистым и безопасным.
+- Все файлы с расширением `.tfvars` и `.tfvars.json`  
+  → `*.tfvars` и `*.tfvars.json`
+
+- Файлы `override.tf`, `override.tf.json`, а также любые файлы, заканчивающиеся на `_override.tf` или `_override.tf.json`  
+  → `override.tf`, `override.tf.json`, `*_override.tf`, `*_override.tf.json`
+
+- Файл `.terraform.tfstate.lock.info`  
+  → `.terraform.tfstate.lock.info`
+
+- Файлы `.terraformrc` и `terraform.rc`  
+  → `.terraformrc` и `terraform.rc`
